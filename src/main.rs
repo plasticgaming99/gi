@@ -1,36 +1,27 @@
-use std::env;
-use std::io::stdin;
-
+use std::{env, fs, process::exit};
 mod commands;
-fn main() {
-    let mut args: Vec<String> = env::args().collect();
-    // let mut input: String = String::new();
-    // let _ = stdin().read_line(&mut input);
 
+fn main() {
+    let version: &str = "1.0.0";
+    println!("gi, Get Integer");
+    println!("version {}", version);
+    let home_dir: String = env::home_dir().expect("").display().to_string();
+    let path = format!("{}/.gi", home_dir);
+
+    match fs::exists(&path) {
+        Ok(true) => println!(".gi was found"),
+        Ok(false) => {
+            println!(".gi was not found. please make a ~/.gi");
+            exit(0);
+        },
+        Err(_) => {}
+    }
+    let args: Vec<String> = env::args().collect();
     if args.len() >= 2 {
         match args[1].as_str() {
-            "profile" => {
-                if args.len() == 3 {
-                    match args[2].as_str() {
-                        "--help" | "-h" => {
-                            commands::profile::help();
-                        }
-                        "new" | "create" | "n" => {}
-                        _ => {
-                            eprintln!("not found this subcommand: {}", args[1]);
-                            eprintln!(r#"tips: type "-h" or "--help""#);
-                        }
-                    }
-                } else {
-                    commands::profile::read_profiles();
-                }
-            }
-            _ => {
-                eprintln!("not found this subcommand: {}", args[1]);
-                eprintln!(r#"tips: type "-h" or "--help""#);
-            }
+            "list" => commands::list::main(path),
+            "run" => commands::run::main(args, path),
+            _ => {}
         }
-    } else {
-        eprintln!("env::args().collect(): error, need args");
     }
 }
