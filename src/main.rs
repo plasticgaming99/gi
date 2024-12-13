@@ -13,7 +13,7 @@ fn main() {
         Ok(false) => {
             println!(".gi was not found. please make a ~/.gi");
             exit(0);
-        },
+        }
         Err(_) => {}
     }
     let args: Vec<String> = env::args().collect();
@@ -21,6 +21,7 @@ fn main() {
         match args[1].as_str() {
             "list" => commands::list::main(path),
             "run" => commands::run::main(args, path),
+            "rs" => commands::run_test::main(args, path),
             _ => {}
         }
     }

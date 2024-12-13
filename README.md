@@ -5,8 +5,8 @@
 Thank you so much for letting me use these crates.
 - byteorder
 [BurntSushi/byteorder](https://github.com/BurntSushi/byteorder)
-- sha2
-[RustCrypto/hashes](https://github.com/RustCrypto/hashes/tree/master/sha2)
+- sha1
+[RustCrypto/hashes](https://github.com/RustCrypto/hashes/tree/master/sha1)
 - hmac
 [RustCrypto/MACs](https://github.com/RustCrypto/MACs/tree/master/hmac)
 
