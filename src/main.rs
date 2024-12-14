@@ -19,9 +19,9 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() >= 2 {
         match args[1].as_str() {
-            "list" => commands::list::main(path),
+            "list" => commands::list::main(args, path),
             "run" => commands::run::main(args, path),
-            "rs" => commands::run_test::main(args, path),
+            "make" => commands::make::main(args, path),
             _ => {}
         }
     }

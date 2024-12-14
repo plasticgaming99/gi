@@ -7,6 +7,7 @@ use std::{fs, process};
 
 fn help() {
     println!("gi run [arg]");
+    println!("  this command runs specified secret key.");
     println!("  [arg]: you need to type a profile name which you want to get code.");
     println!("         you also can use --help or help to output this help message. ");
 }
@@ -149,8 +150,10 @@ fn output(arg: &str, path: String) {
 }
 
 pub fn main(args: Vec<String>, path: String) {
-    match args[2].as_str() {
-        "--help" | "-h" => help(),
-        arg => output(arg, path),
+    if args.len() == 3 {
+        match args[2].as_str() {
+            "--help" | "-h" => help(),
+            arg => output(arg, path),
+        }
     }
 }
