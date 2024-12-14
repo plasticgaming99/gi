@@ -11,7 +11,7 @@ Thank you so much for letting me use these crates.
 [RustCrypto/MACs](https://github.com/RustCrypto/MACs/tree/master/hmac)
 
 ```
-git clone https://github.com/mimisheesharp/gi
+git clone https://github.com/sharpedmimishee/gi
 cargo build
 ```
 
