@@ -5,11 +5,11 @@ use std::{
 };
 
 fn help() {
-    println!("gi make [name] [key]");
-    println!("  this command makes a pair of a name and a key.");
+    println!("gi add [name] [key]");
+    println!("  this command adds a pair of a name and a key.");
     println!("  [name] and [key]: you need to type a profile name and secret key.");
-    println!("gi make");
-    println!("  this command makes a pair of a name and a key.");
+    println!("gi add");
+    println!("  this command adds a pair of a name and a key.");
     println!("  you don't need name and key if you want guided style.");
 }
 

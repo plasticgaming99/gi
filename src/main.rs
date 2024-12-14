@@ -21,7 +21,7 @@ fn main() {
         match args[1].as_str() {
             "list" => commands::list::main(args, path),
             "run" => commands::run::main(args, path),
-            "make" => commands::make::main(args, path),
+            "add" => commands::add::main(args, path),
             "delete" => commands::delete::main(args, path),
             _ => {}
         }
