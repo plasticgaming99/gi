@@ -18,7 +18,7 @@ pub fn main(args: Vec<String>, path: String) {
     if args.len() == 3 {
         match args[2].as_str() {
             "--help" | "-h" => help(),
-            _ => {},
+            _ => {}
         }
     } else if args.len() == 2 {
         list(path);

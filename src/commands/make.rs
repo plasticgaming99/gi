@@ -61,7 +61,8 @@ fn make_guide(path: String) {
             print!("key:");
             let _ = io::stdout().flush();
             let _ = io::stdin().read_line(&mut key);
-            fs::write(&path, format!("{} {} {}\n", fs::read_to_string(path.clone()).unwrap().to_string(), &name.trim(), &key.trim())).expect("write error!");
+            let content = fs::read_to_string(path.clone()).unwrap().to_string();
+            fs::write(&path, format!("{}\n {} {}", &content.trim(), &name.trim(), &key.trim())).expect("write error!");
             println!("{} was written!", name.trim());
         }
         Err(_) => {

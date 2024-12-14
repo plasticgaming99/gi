@@ -7,7 +7,7 @@ use std::{fs, process};
 
 fn help() {
     println!("gi run [arg]");
-    println!("  this command runs specified secret key.");
+    println!("  this command runs a specified secret key.");
     println!("  [arg]: you need to type a profile name which you want to get code.");
     println!("         you also can use --help or help to output this help message. ");
 }
