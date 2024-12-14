@@ -1,7 +1,17 @@
 # gi: a command for 2fa
 *G*et *I*nteger
 
-[dependencies]
+## commands
+run the following commands with `-h` option to learn how to use.
+`gi run` `gi list` `gi add` `gi delete`
+## build
+```
+git clone https://github.com/sharpedmimishee/gi
+cargo build
+```
+
+
+# [dependencies]
 Thank you so much for letting me use these crates.
 - byteorder
 [BurntSushi/byteorder](https://github.com/BurntSushi/byteorder)
@@ -10,8 +20,4 @@ Thank you so much for letting me use these crates.
 - hmac
 [RustCrypto/MACs](https://github.com/RustCrypto/MACs/tree/master/hmac)
 
-```
-git clone https://github.com/sharpedmimishee/gi
-cargo build
-```
 
