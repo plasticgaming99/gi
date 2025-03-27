@@ -17,7 +17,7 @@ Thank you so much for letting me use these crates.
 [BurntSushi/byteorder](https://github.com/BurntSushi/byteorder)
 - sha1
 [RustCrypto/hashes](https://github.com/RustCrypto/hashes/tree/master/sha1)
+MIT Licence https://github.com/RustCrypto/hashes/blob/master/sha1/LICENSE-MIT  
 - hmac
-[RustCrypto/MACs](https://github.com/RustCrypto/MACs/tree/master/hmac)
-
-
+[RustCrypto/MACs](https://github.com/RustCrypto/MACs/tree/master/hmac)  
+MIT Licence https://github.com/RustCrypto/MACs/blob/master/hmac/LICENSE-MIT  
