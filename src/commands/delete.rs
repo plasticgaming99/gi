@@ -1,9 +1,12 @@
 use std::{fs, io::ErrorKind, process};
 
+static HELP: &str = r#"gi delete [name]
+  this command deletes a specified secret key
+  [name]: you need to"#;
+
+#[inline(always)]
 fn help() {
-    println!("gi delete [name]");
-    println!("  this command deletes a specified secret key");
-    println!("  [name]: you need to ")
+    println!("{}", HELP);
 }
 
 fn search(name: String, contents: String) -> Result<Vec<String>, ErrorKind> {
