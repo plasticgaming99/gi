@@ -20,7 +20,12 @@ fn check_name(name: String, path: String) -> io::Result<()> {
     match fs::read_to_string(path) {
         Ok(str) => {
             println!("{}", str);
-            let names: Vec<&str> = str.split_whitespace().collect();
+            let pairs: Vec<&str> = str.split("/n").collect();
+            let mut names: Vec<&str> = Vec::new();
+            for i in pairs {
+                println!("{}", i);
+                names.push(i.split_whitespace().take(1).next().unwrap());
+            }
             for i in names {
                 if i == name {
                     println!("{} is found. Please choose another name or delete the {}.", name, name);
@@ -43,7 +48,7 @@ fn make(name: String, key: String, path: String) {
     println!("key: {}", &key);
     match check_name(name.clone().trim().to_string(), path.clone().trim().to_string()) {
         Ok(()) => {
-            fs::write(&path, format!("{} {} {}\n", fs::read_to_string(path.clone()).unwrap().to_string(), &name.trim(), &key.trim())).expect("write error!");
+            fs::write(&path, format!("{}{} {}\n", fs::read_to_string(path.clone()).unwrap().to_string(), &name.trim(), &key.trim())).expect("write error!");
             println!("{} was written!", name.trim())
         }
         Err(_) => {
