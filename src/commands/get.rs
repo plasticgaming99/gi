@@ -18,6 +18,8 @@ static HELP: &str = r#"gi get [profiles, args]
     print TOTP.
   --all-otp:
     print both.
+  --update:
+    update when code changed.
   --help: 
     output this help message."#;
 
