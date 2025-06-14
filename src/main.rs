@@ -1,4 +1,8 @@
-use std::{env, fs, process::exit};
+use std::{
+    env, fs,
+    io::{stdin, stdout},
+    process::exit,
+};
 mod commands;
 
 fn main() {
@@ -12,6 +16,16 @@ fn main() {
         Ok(true) => println!(".gi was found"),
         Ok(false) => {
             println!(".gi was not found. please make a ~/.gi");
+            print!("would like to make it?: ");
+            let mut make = String::new();
+            let _ = stdin().read_line(&mut make);
+            match make.to_lowercase().as_str().trim() {
+                "y" | "yes" => {
+                    fs::File::create(path).unwrap();
+                    println!(".gi was created successfully.");
+                }
+                _ => exit(0),
+            }
             exit(0);
         }
         Err(_) => {}
