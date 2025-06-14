@@ -1,6 +1,6 @@
 use std::{
     env, fs,
-    io::{stdin, stdout},
+    io::{stdin, stdout, Write},
     process::exit,
 };
 mod commands;
@@ -18,6 +18,7 @@ fn main() {
             println!(".gi was not found. please make a ~/.gi");
             print!("would like to make it?: ");
             let mut make = String::new();
+            let _ = stdout().flush();
             let _ = stdin().read_line(&mut make);
             match make.to_lowercase().as_str().trim() {
                 "y" | "yes" => {
