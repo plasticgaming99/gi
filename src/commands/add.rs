@@ -4,13 +4,16 @@ use std::{
     process,
 };
 
+static HELP: &str = r#"gi add [name] [key]
+  this command adds a pair of a name and a key.
+  [name] and [key]: you need to type a profile name and secret key.
+gi add
+  this command adds a pair of a name and a key.
+  you don't need name and key if you want guided style."#;
+
+#[inline(always)]
 fn help() {
-    println!("gi add [name] [key]");
-    println!("  this command adds a pair of a name and a key.");
-    println!("  [name] and [key]: you need to type a profile name and secret key.");
-    println!("gi add");
-    println!("  this command adds a pair of a name and a key.");
-    println!("  you don't need name and key if you want guided style.");
+    println!("{}", HELP);
 }
 
 fn check_name(name: String, path: String) -> io::Result<()> {
